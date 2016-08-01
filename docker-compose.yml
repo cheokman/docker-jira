@@ -16,7 +16,7 @@ mysql:
   - mysqldata
 jira:
   restart: on-failure:5
-  build: ./jira/
+  image: cheokman/docker-jira:7.1.9
   ports:
   - 8080:8080/tcp
   environment:
