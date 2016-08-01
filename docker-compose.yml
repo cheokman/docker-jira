@@ -1,0 +1,29 @@
+jiradata:
+  restart: on-failure:5
+  image: cheokman/jira-data
+mysqldata:
+  restart: on-failure:5
+  image: cheokman/mysql-data
+mysql:
+  restart: on-failure:5
+  image: mysql/mysql-server:5.6
+  environment:
+    MYSQL_DATABASE: jiradb
+    MYSQL_USER: jira
+    MYSQL_PASSWORD: atlassian
+    MYSQL_ROOT_PASSWORD: changeme
+  volumes_from:
+  - mysqldata
+jira:
+  restart: on-failure:5
+  build: ./jira/
+  ports:
+  - 8080:8080/tcp
+  environment:
+    MYSQL_DATABASE: jiradb
+    MYSQL_USER: jira
+    MYSQL_PASSWORD: atlassian
+  links:
+  - mysql
+  volumes_from:
+  - jiradata
