@@ -6,6 +6,8 @@ docker-compose up -d jira
 ```
 
 # MySQL Database config
+```
 MYSQL_DATABASE: jiradb
 MYSQL_USER: jira
 MYSQL_PASSWORD: atlassian
+```
