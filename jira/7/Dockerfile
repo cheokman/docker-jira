@@ -3,7 +3,7 @@ MAINTAINER Ben Wu <wucheokman@gmail.com>
 
 ENV CONF_HOME     /var/atlassian/jira
 ENV CONF_INSTALL  /opt/atlassian/jira
-ENV CONF_VERSION  7.1.9
+ENV CONF_VERSION  7.2.1
 
 RUN yum -y update && yum -y install epel-release \
     && yum -y install tar \
@@ -39,4 +39,4 @@ ENV _RUNJAVA 'java'
 
 # Run Atlassian Confluence as a foreground process by default.
 CMD ["/opt/atlassian/jira/bin/start-jira.sh", "-fg"]
- 
+
