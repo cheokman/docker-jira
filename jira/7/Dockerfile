@@ -3,7 +3,7 @@ MAINTAINER Ben Wu <wucheokman@gmail.com>
 
 ENV CONF_HOME     /var/atlassian/jira
 ENV CONF_INSTALL  /opt/atlassian/jira
-ENV CONF_VERSION  7.2.1
+ENV CONF_VERSION  7.2.2
 
 RUN yum -y update && yum -y install epel-release \
     && yum -y install tar \
